@@ -66,7 +66,7 @@ final class TrikoderOAuth2Extension extends Extension implements PrependExtensio
         $this->configureScopes($container, $config['scopes']);
 
         $container->getDefinition(CreateClientCommand::class)
-            ->setArgument(1, $config['crypt_client_secret']);
+            ->setArgument(1, empty($config['crypt_client_secret']) ? true : $config['crypt_client_secret']);
 
         $container->getDefinition(ClientRepository::class)
             ->setArgument(1, true/*$config['crypt_client_secret']*/);

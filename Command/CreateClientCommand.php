@@ -31,12 +31,12 @@ final class CreateClientCommand extends Command
      */
     private $cryptClientSecret;
 
-    public function __construct(ClientManagerInterface $clientManager, bool $cryptClientSecret = false)
+    public function __construct(ClientManagerInterface $clientManager, bool $cryptClientSecret = true)
     {
         parent::__construct();
 
         $this->clientManager = $clientManager;
-        $this->cryptClientSecret = true;
+        $this->cryptClientSecret = $cryptClientSecret;
     }
 
     protected function configure(): void

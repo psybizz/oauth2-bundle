@@ -36,7 +36,7 @@ final class CreateClientCommand extends Command
         parent::__construct();
 
         $this->clientManager = $clientManager;
-        $this->cryptClientSecret = $cryptClientSecret;
+        $this->cryptClientSecret = true;
     }
 
     protected function configure(): void
